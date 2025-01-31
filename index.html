@@ -137,12 +137,13 @@
         document.getElementById('whatsapp-link').addEventListener('click', function () {
             const name = document.getElementById('name').value;
             const phone = '+5493844515405';
+
+            // Evento de seguimiento para Meta Pixel
+            fbq('track', 'Contact');
+
             if (name) {
                 const url = `https://wa.me/${phone}?text=Hola, mi nombre es ${encodeURIComponent(name)} y quiero crear mi usuario en Red Fortuna.`;
                 this.setAttribute('href', url);
-
-                // Evento de seguimiento de Meta Pixel
-                fbq('track', 'Contact');
             } else {
                 alert('Por favor, ingresa tu nombre antes de continuar.');
             }
