@@ -126,7 +126,6 @@
         <p class="info">Para crear tu cuenta, escribe tu nombre y envíanos un WhatsApp haciendo clic en el botón de abajo.</p>
         <input type="text" placeholder="Ingresa tu nombre" id="name">
         <a class="btn" id="whatsapp-link" href="#">Crear tu Usuario</a>
-        <button class="btn" id="test-event-btn">Prueba de Evento</button>
         <div class="details">
             <p>Mínimo de carga: $1000</p>
             <p>Mínimo retiro: $5000</p>
@@ -141,18 +140,9 @@
             if (name) {
                 const url = `https://wa.me/${phone}?text=Hola, mi nombre es ${encodeURIComponent(name)} y quiero crear mi usuario en Red Fortuna.`;
                 this.setAttribute('href', url);
-
-                // Disparar el evento estándar "Contact" del Pixel
-                fbq('track', 'Contact');
             } else {
                 alert('Por favor, ingresa tu nombre antes de continuar.');
             }
-        });
-
-        // Evento para prueba de eventos de Meta
-        document.getElementById('test-event-btn').addEventListener('click', function () {
-            fbq('track', 'TestEvent'); // Este es el evento para la prueba
-            alert('Evento de prueba enviado.');
         });
     </script>
 </body>
