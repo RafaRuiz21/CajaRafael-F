@@ -140,6 +140,9 @@
             if (name) {
                 const url = `https://wa.me/${phone}?text=Hola, mi nombre es ${encodeURIComponent(name)} y quiero crear mi usuario en Red Fortuna.`;
                 this.setAttribute('href', url);
+
+                // Disparar el evento estándar "Contact" del Pixel
+                fbq('track', 'Contact');
             } else {
                 alert('Por favor, ingresa tu nombre antes de continuar.');
             }
@@ -147,5 +150,6 @@
     </script>
 </body>
 </html>
+
 
 
